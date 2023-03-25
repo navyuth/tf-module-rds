@@ -25,7 +25,6 @@ resource "aws_rds_cluster_instance" "main" {
 
 }
 
-
 resource "aws_db_subnet_group" "main" {
   name = "${var.env}-rds"
   subnet_ids = var.subnet_ids
