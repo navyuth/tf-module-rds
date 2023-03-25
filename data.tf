@@ -3,7 +3,7 @@ data "aws_ssm_parameter" "user" {
 }
 
 data "aws_ssm_parameter" "pass" {
-  name = "{var.env}.rds.pass"
+  name = "${var.env}.rds.pass"
 }
 
 data "aws_kms_key" "key" {
