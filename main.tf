@@ -6,9 +6,9 @@ resource "aws_rds_cluster" "main" {
   master_username = data.aws_ssm_parameter.user.value
   master_password = data.aws_ssm_parameter.pass.value
   backup_retention_period = var.backup_retention_period
+  skip_final_snapshot = var.skip_final_snapshot
   preferred_backup_window = var.preferred_backup_window
   db_subnet_group_name = aws_db_subnet_group.main.name
-  skip_final_snapshot = true
 
   tags =merge(
     var.tags,
