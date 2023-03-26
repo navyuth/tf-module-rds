@@ -14,6 +14,7 @@ resource "aws_rds_cluster" "main" {
     var.tags,
     { Name = "${var.env}-rds"}
   )
+
 }
 
 resource "aws_rds_cluster_instance" "main" {
@@ -23,8 +24,8 @@ resource "aws_rds_cluster_instance" "main" {
   instance_class     = var.instance_class
   engine = var.engine
   engine_version = var.engine_version
-
 }
+
 
 resource "aws_db_subnet_group" "main" {
   name = "${var.env}-rds"
